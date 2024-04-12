@@ -1,12 +1,10 @@
 
-import Die from "./components/Die";
+import Die from './Die';
 
-function App() {
+function Game() {
 
   return (
-    <main className="main">
-      {/* Future Header */}
-      <h1 className="game-heading">Tenzies</h1>
+    <>
       <div className='dice-grid'>
         <Die value="1" />
         <Die value="2" />
@@ -19,8 +17,8 @@ function App() {
         <Die value="2" />
         <Die value="4" />
       </div>
-    </main>
+    </>
   )
 }
 
-export default App;
+export default Game;
