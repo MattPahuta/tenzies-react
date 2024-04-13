@@ -6,6 +6,7 @@ A basic tenzies dice game app, built as part of the Scrimba Frontend Career Path
 
 - [Overview](#overview)
   - [React concepts](#react-concepts)
+  - [Enhancements](#enhancements)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -24,13 +25,18 @@ This project features the use of the following React hooks and concepts
 - Forms
 - Side effects
 
+### Enhancements
+Project enhancements beyond course content
+
+- Improved seperation of components 
+- Added constants, helpers, utils for better organization and future expansion
+
 ### Screenshot
 
 ![]()
 
 ### Links
 
-- [Scrimba Scrim URL](https://scrimba.com/scrim/co6a4409bb0f262db4763763f)
 - [Live Site URL]()
 
 ## My process
