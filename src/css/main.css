@@ -14,12 +14,13 @@
   --fw-700: 700;
   /* border radius */
   --br-soft: 5px;
-  --br-med: 10px;
+  --br-med: 8px;
   /* colors */
   --clr-neutral-100: #FFFFFF;
   --clr-neutral-200: #F5F5F5;
   --clr-neutral-700: #2B283A;
   --clr-neutral-800: #0B2434;
+  --clr-primary-400: hsl(248, 100%, 60%);
 }
 
 body {
@@ -33,17 +34,38 @@ body {
 
 .main {
   width: min(100% - 2rem, 50rem);
-  min-height: 500px;
+  min-height: 600px;
   margin-inline: auto;
   background-color: var(--clr-neutral-200);
   color: var(--clr-neutral-700);
-
+  padding: 20px;
   border-radius: var(--br-soft);
-  padding: 24px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+button.button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  text-align: center;
+  border-radius: var(--br-med);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  transition: 220ms all ease-in-out;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  button.button {
+    border: 2px solid currentcolor;
+  }
 }
 
 /* .game-wrapper {
@@ -64,23 +86,34 @@ body {
 }
 
 .dice-grid {
-  display: grid;
-  grid-template: auto auto / repeat(5, 1fr);
+  width: min(100% - 2rem, 30rem);
+  max-width: 100%;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, 75px);
+  justify-content: center;
   gap: 20px;
-
   font-size: var(--fs-700);
   font-weight: var(--fw-500);
 
 }
 
-.die-face {
-  height: 60px;
-  width: 60px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-  border-radius: var(--br-med);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+button.die-button {
   background-color: var(--clr-neutral-100);
+  padding: 12px;
+}
+
+button.roll-button {
+  margin-block-start: 40px;
+
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-500);
+  padding: 0.25em 0.75em;
+  min-width: 10ch;
+  min-height: 44px;
+}
+
+button.roll-button:hover {
+  outline-style: solid;
+  outline-color: var(--clr-neutral-700);;
 }

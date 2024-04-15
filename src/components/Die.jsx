@@ -1,13 +1,10 @@
-import React from "react";
 
 function Die({value}) {
 
-  // ToDo: dice should be buttons
-
   return (
-    <div className="die-face">
+    <button className="die-face button die-button">
       <span className="die-num">{value}</span>
-    </div>
+    </button>
   )
 }
 
