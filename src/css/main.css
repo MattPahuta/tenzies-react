@@ -20,7 +20,9 @@
   --clr-neutral-200: #F5F5F5;
   --clr-neutral-700: #2B283A;
   --clr-neutral-800: #0B2434;
+  --clr-primary-300: #59E391;
   --clr-primary-400: hsl(248, 100%, 60%);
+  /* transition */
 }
 
 body {
@@ -49,7 +51,7 @@ body {
 
 button.button {
   border: none;
-  background-color: transparent;
+  /* background-color: transparent; */
   padding: 0;
   cursor: pointer;
   display: inline-flex;
@@ -59,7 +61,7 @@ button.button {
   text-align: center;
   border-radius: var(--br-med);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
-  transition: 220ms all ease-in-out;
+  transition: 200ms all ease-in-out;
 }
 
 @media screen and (-ms-high-contrast: active) {
@@ -117,3 +119,7 @@ button.roll-button:hover {
   outline-style: solid;
   outline-color: var(--clr-neutral-700);;
 }
+
+/* button.held-die {
+  background-color: var(--clr-primary-300);
+} */
