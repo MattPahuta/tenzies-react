@@ -87,6 +87,8 @@ button.button {
   font-size: var(--fs-900);
 }
 
+/* ToDo: adjust styles so only 2 cols on mobile,  5 cols on tablet and above. Pluse, increase dice size for both */
+
 .dice-grid {
   width: min(100% - 2rem, 30rem);
   max-width: 100%;

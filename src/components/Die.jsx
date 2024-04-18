@@ -6,7 +6,7 @@ function Die({value, isHeld, holdDice}) {
   }
 
   return (
-    <button className='die-face button die-button held-die' style={styles} onClick={holdDice}>
+    <button className='die-face button die-button' style={styles} onClick={holdDice}>
       <span className="die-num">{value}</span>
     </button>
   )
