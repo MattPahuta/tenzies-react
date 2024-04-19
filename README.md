@@ -26,10 +26,14 @@ This project features the use of the following React hooks and concepts
 - Side effects
 
 ### Enhancements
-Project enhancements beyond course content
+Project enhancements beyond course tutorial content:
 
 - Improved seperation of components 
 - Added constants, helpers, utils for better organization and future expansion
+- Add real dots on dice (CSS)
+- Track number of rolls
+- Track time it took to win
+- Save best time/low rolls to localStorage
 
 ### Screenshot
 

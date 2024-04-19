@@ -1,6 +1,5 @@
-
 function Die({value, isHeld, holdDice}) {
-  // isHeld ? 'die-face button die-button held-die' : 'die-face button die-button'
+  // style a held die
   const styles = {
     backgroundColor: isHeld ? '#59E391' : '#FFFFFF',
   }

@@ -1,39 +1,18 @@
 import React from "react";
+import Header from "./components/Header";
 import Die from "./components/Die";
-import { DICE_ARRAY_LENGTH, DIE_SIDE_COUNT } from "./constants";
+// import { DICE_ARRAY_LENGTH, DIE_SIDE_COUNT } from "./constants";
+
+import { generateNewDie, generateNewDice } from "./game-helpers";
+
 import Confetti from 'react-confetti';
 
 function App() {
-  // ToDo: move to 'helpers' file
-
-    // move this to utils file
-  function generateNewDie() {
-    return {
-      value: Math.ceil(Math.random() * DIE_SIDE_COUNT),
-      isHeld: false,
-      id: Math.random()
-    }
-  }
-
-  // const generateNewDice = () => [...new Array(DICE_ARRAY_LENGTH)]
-  //   .map(() => {
-  //     return {
-  //       value: Math.ceil(Math.random() * DIE_SIDE_COUNT),
-  //       isHeld: false,
-  //       id: Math.random()
-  //     }
-  // });
-
-  const generateNewDice = () => [...new Array(DICE_ARRAY_LENGTH)]
-    .map(() => generateNewDie());
-
+  // game state
   const [dice, setDice] = React.useState(() => generateNewDice());
   const [tenzies, setTenzies] = React.useState(false);
 
   React.useEffect(() => {
-    // console.log('dice state changed')
-    // const allHeld = dice.every(die => die.isHeld);
-    // const allEqualVal = dice.every(die => die.value === dice[0].value);
     const winningDice = dice.every((die) => {
       return die.isHeld && die.value === dice[0].value;
     })
@@ -41,11 +20,7 @@ function App() {
     if (winningDice) {
       setTenzies(true);
       console.log('Won!')
-  }
-    // if (allHeld && allEqualVal) {
-    //     setTenzies(true);
-    //     console.log('Won!')
-    // }
+    }
   }, [dice])
   
   // Restart game
@@ -53,27 +28,19 @@ function App() {
     setTenzies(false)
     setDice(generateNewDice());
   }
-
+  // Roll the dice
   function rollDice() {
-    // setDiceArray(generateNewDice())
-    // if (tenzies) {
-    //   restartGame();
-    //   return;
-    // }
-
-    
     if (!tenzies) {
       setDice(prevDice => prevDice.map(die => {
         return die.isHeld ?
           die :
           generateNewDie()
       }))
-
     } else {
       restartGame();
     }
   }
-
+  // Hold a specific die
   function holdDice(id) {
     // console.log(id)
     setDice(prevDice => prevDice.map(die => {
@@ -83,17 +50,24 @@ function App() {
     }))
   }
 
-  // isHeld ? 'die-face button die-button held-die' : 'die-face button die-button'
   const diceElements = dice.map(({value, id, isHeld}) => (
     <Die key={id} value={value} isHeld={isHeld} holdDice={() => holdDice(id)} />
   ))
 
+  // function confetti() {
+  //   const {width, height} = useWindowSize();
+  //   return (
+  //     <Confetti
+  //       width={width}
+  //       height={height}
+  //     />
+  //   )
+  // }
+
   return (
     <main className="main">
-      {/* Future Header */}
-      {/* Render confetti within game container? And/or set width/height */}
       {tenzies && <Confetti />}
-      <h1 className="game-heading">Tenzies</h1>
+      <Header />
       <div className='dice-grid'>
         {diceElements}
       </div>
