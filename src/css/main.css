@@ -16,6 +16,7 @@
   /* colors */
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-200: hsl(0, 0%, 96%);
+  --clr-neutral-400: hsl(250, 10%, 51%);
   --clr-neutral-700: hsl(250, 18%, 19%);
   --clr-neutral-800: hsl(203, 65%, 12%);
   --clr-primary-400: hsl(248, 100%, 60%);
@@ -77,6 +78,19 @@ button.button {
 
 .game-rules {
   max-width: 50ch;
+}
+
+.roll-count-container {
+  width: 80%;
+  margin-top: 24px;
+  margin-inline: auto;
+  padding: 0.75em 1em;
+  /* border: 2px solid var(--clr-neutral-400); */
+  border-radius: var(--br-soft);
+}
+
+.roll-count {
+  font-weight: var(--fw-700);
 }
 
 .dice-grid {

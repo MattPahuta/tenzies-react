@@ -30,8 +30,10 @@ Project enhancements beyond course tutorial content:
 
 - Improved seperation of components 
 - Added constants, helpers, utils for better organization and future expansion
-- Add real dots on dice (CSS)
 - Track number of rolls
+
+- Begin game with blank dice placeholders
+- Add real dots on dice (CSS)
 - Track time it took to win
 - Save best time/low rolls to localStorage
 

@@ -11,6 +11,7 @@ function App() {
   // game state
   const [dice, setDice] = React.useState(() => generateNewDice());
   const [tenzies, setTenzies] = React.useState(false);
+  const [rollCount, setRollCount] = React.useState(1);
 
   React.useEffect(() => {
     const winningDice = dice.every((die) => {
@@ -27,7 +28,11 @@ function App() {
   function restartGame() {
     setTenzies(false)
     setDice(generateNewDice());
+    setRollCount(1);
   }
+
+  // new function - trackRolls?
+
   // Roll the dice
   function rollDice() {
     if (!tenzies) {
@@ -36,6 +41,8 @@ function App() {
           die :
           generateNewDie()
       }))
+      setRollCount((prevRollCount) => prevRollCount + 1)
+      console.log('Rolls: ', rollCount)
     } else {
       restartGame();
     }
@@ -54,20 +61,10 @@ function App() {
     <Die key={id} value={value} isHeld={isHeld} holdDice={() => holdDice(id)} />
   ))
 
-  // function confetti() {
-  //   const {width, height} = useWindowSize();
-  //   return (
-  //     <Confetti
-  //       width={width}
-  //       height={height}
-  //     />
-  //   )
-  // }
-
   return (
     <main className="main">
       {tenzies && <Confetti />}
-      <Header />
+      <Header rollCount={rollCount} />
       <div className='dice-grid'>
         {diceElements}
       </div>
