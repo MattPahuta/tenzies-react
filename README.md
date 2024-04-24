@@ -42,6 +42,7 @@ Completed:
 - Improve and streamline implementation of styling (modern CSS)
 
 Future:
+- Improve button hover and active state styling
 - Improve win condition messaging and confetti implementation
 - Create realistic-looking dice with CSS
 - Track time it took to win
@@ -53,7 +54,7 @@ Future:
 
 ### Links
 
-- [Live Site URL]()
+- [Live Site URL](https://velvety-raindrop-4dbbac.netlify.app/)
 
 ## My process
 
