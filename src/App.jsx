@@ -1,10 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Die from "./components/Die";
-// import { DICE_ARRAY_LENGTH, DIE_SIDE_COUNT } from "./constants";
-
 import { generateNewDie, generateNewDice } from "./game-helpers";
-
 import Confetti from 'react-confetti';
 
 function App() {
@@ -20,7 +17,6 @@ function App() {
 
     if (winningDice) {
       setTenzies(true);
-      console.log('Won!')
     }
   }, [dice])
   
@@ -31,8 +27,6 @@ function App() {
     setRollCount(1);
   }
 
-  // new function - trackRolls?
-
   // Roll the dice
   function rollDice() {
     if (!tenzies) {
@@ -42,14 +36,12 @@ function App() {
           generateNewDie()
       }))
       setRollCount((prevRollCount) => prevRollCount + 1)
-      console.log('Rolls: ', rollCount)
     } else {
       restartGame();
     }
   }
   // Hold a specific die
   function holdDice(id) {
-    // console.log(id)
     setDice(prevDice => prevDice.map(die => {
       return die.id === id ?
         {...die, isHeld: !die.isHeld} : // flip isHeld for matching die id
