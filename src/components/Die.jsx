@@ -5,7 +5,13 @@ function Die({value, isHeld, holdDice}) {
   }
 
   return (
-    <button className='die-face button die-button' style={styles} onClick={holdDice}>
+    <button 
+      className='die-face button die-button' 
+      style={styles} 
+      onClick={holdDice} 
+      aria-pressed={isHeld}
+      aria-label={`Die showing ${value}, ${isHeld ? 'held' :'not held'}`} 
+    >
       <span className="die-num">{value}</span>
     </button>
   )

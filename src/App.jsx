@@ -7,28 +7,18 @@ import Confetti from 'react-confetti';
 function App() {
   // game state
   const [dice, setDice] = React.useState(() => generateNewDice());
-  // Add a variable to keep track of whether the user has won the game
-  // if all dice are held and have the same value, the user has won
-  // ToDo: replace 'tenzies' with 'gameWon'
-  const gameWon = dice.every((die) => die.isHeld && die.value === dice[0].value);
   const [rollCount, setRollCount] = React.useState(1);
+  const rollButtonRef = React.useRef(null); // improve accessibility
+  const gameWon = dice.every((die) => die.isHeld && die.value === dice[0].value);
 
+  React.useEffect(() => {
+    if (gameWon) {
+      rollButtonRef.current.focus();
+    }
+  }, [gameWon]);
 
-  // const [tenzies, setTenzies] = React.useState(false);
-
-  // React.useEffect(() => {
-  //   const winningDice = dice.every((die) => {
-  //     return die.isHeld && die.value === dice[0].value;
-  //   })
-
-  //   if (winningDice) {
-  //     setTenzies(true);
-  //   }
-  // }, [dice])
-  
   // Restart game
   function restartGame() {
-    // setTenzies(false)
     setDice(generateNewDice());
     setRollCount(1);
   }
@@ -66,7 +56,7 @@ function App() {
       <div className='dice-grid'>
         {diceElements}
       </div>
-      <button className="button roll-button" onClick={rollDice}>
+      <button className="button roll-button" onClick={rollDice} ref={rollButtonRef}>
         {gameWon ? 'New Game' : 'Roll'}
       </button>
     </main>

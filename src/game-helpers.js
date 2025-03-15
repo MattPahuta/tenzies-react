@@ -5,7 +5,7 @@ export const generateNewDie = () => {
   return {
     value: Math.ceil(Math.random() * DIE_SIDE_COUNT),
     isHeld: false,
-    id: Math.random()
+    id: crypto.randomUUID()
   }
 }
 

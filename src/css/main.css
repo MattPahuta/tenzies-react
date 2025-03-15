@@ -20,7 +20,14 @@
   --clr-neutral-700: hsl(250, 18%, 19%);
   --clr-neutral-800: hsl(203, 65%, 12%);
   --clr-primary-400: hsl(248, 100%, 60%);
+  /* base outline sytles */
+  --focus-outline-color: currentColor;
+  --focus-outline-offset: 0.1rem;
+  --focus-outline-style: solid;
+  --focus-outline-width: 2px;
 }
+
+
 
 body {
   height: 100vh;
@@ -109,6 +116,7 @@ button.button {
   }
 }
 
+
 button.die-button {
   width: 85px;
   height: 85px;
@@ -116,6 +124,8 @@ button.die-button {
   padding: 12px;
   transition: 50ms all ease-in-out;
 }
+
+
 
 button.roll-button {
   background-color: var(--clr-primary-400);
@@ -132,3 +142,26 @@ button.roll-button:hover {
   outline-style: solid;
   outline-color: var(--clr-neutral-700);;
 }
+
+button:focus-visible {
+  outline-color: var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+  outline-style: var(--focus-outline-style);
+  outline-width: var(--focus-outline-width);
+}
+
+button.die-button:focus-visible {
+  --outline-color: var(--clr-primary-400);
+  --outline-offset: 0.2rem;
+  outline-color: var(--outline-color);
+  outline-offset: var(--outline-offset);
+}
+
+button.roll-button:focus-visible {
+  --outline-color: var(--clr-neutral-800);
+  --outline-offset: 0.2rem;
+  outline-color: var(--outline-color);
+  outline-offset: var(--outline-offset);
+}
+
+
