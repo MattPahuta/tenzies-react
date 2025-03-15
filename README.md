@@ -20,11 +20,12 @@ A basic tenzies dice game app, built as part of the [Scrimba Frontend Career Pat
 ## Overview
 
 ### React concepts
-This project features the use of the following React hooks and concepts
+This project features the use of the following:
 
-- useState and useEffect
+- React Hooks: useState, useEffect, and useRef
 - Conditional rendering
 - Side effects
+- Accessible design
 
 ### Requirements
 - Display ten randomly generated dice values (1 to 6) to the user
@@ -42,7 +43,6 @@ Completed:
 - Improve and streamline implementation of styling (modern CSS)
 
 Future:
-- Improve button hover and active state styling
 - Improve win condition messaging and confetti implementation
 - Create realistic-looking dice with CSS
 - Track time it took to win
@@ -73,7 +73,7 @@ Future:
 This simple function forms the foundation of the app, utilizing modern JS (map method, arrow functions, and ternary operator), accessing React State, and allowing for the primary button to be used to both roll and restart a game.
 ```js
   function rollDice() {
-    if (!tenzies) {
+    if (!gameWon) {
       setDice(prevDice => prevDice.map(die => {
         return die.isHeld ?
           die :
@@ -98,5 +98,4 @@ The concepts practiced here will lead straight into my next React project, Quizz
 ## Author
 
 - Website - [Matt Pahuta](https://www.mattpahuta.com)
-- Twitter/X - [@mattpahuta](https://www.twitter.com/MattPahuta)
 - LinkedIn - [Matt Pahuta](www.linkedin.com/in/mattpahuta)
